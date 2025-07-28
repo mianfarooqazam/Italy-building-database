@@ -234,8 +234,8 @@ const Dashboard = () => {
     <div className="p-6">
       {/* Title Section */}
       <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          Italy Building Performance Database
+        <h1 className="text-3xl font-bold text-gray-800 mb-2 uppercase">
+          Italy - Building Performance Database
         </h1>
         <p className="text-gray-600 text-lg">
           Energy Efficiency Analysis and Optimization Platform

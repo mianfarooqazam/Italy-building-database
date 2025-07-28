@@ -5,7 +5,6 @@ import BuildingDetails from './pages/BuildingDetails';
 import Certificate from './pages/Certificate';
 import EnergyBill from './pages/EnergyBill';
 import AIComponent from './pages/AIComponent';
-import ToolTutorial from './pages/ToolTutorial';
 import Co2Emissions from './pages/Co2Emissions';
 import Comparison from './pages/Comparison'; 
 import { ToastContainer } from 'react-toastify';
@@ -34,9 +33,6 @@ function App() {
               <Route path="/co2-emissions" element={<Co2Emissions />} />
               <Route path="/ai-component" element={<AIComponent />} />
               <Route path="/comparison" element={<Comparison />} /> {/* Add the new route */}
-
-              {/* Define ToolTutorial Route */}
-              <Route path="/tool-tutorial" element={<ToolTutorial />} />
 
               {/* Redirect any unknown routes to Dashboard */}
               <Route path="*" element={<Navigate to="/dashboard" />} />
