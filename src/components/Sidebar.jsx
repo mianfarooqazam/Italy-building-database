@@ -77,9 +77,7 @@ function Sidebar() {
       className="w-64 h-screen fixed shadow-lg border-r border-gray-200 flex flex-col"
       style={{ backgroundColor: "#fff" }}
     >
-      <div className="flex items-center justify-center h-20">
-        <img src={Logo} alt="Logo" className="h-20" />
-      </div>
+    
       <hr className="my-4 border-white" />
 
       <ul className="mt-8 flex-1">

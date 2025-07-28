@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -15,7 +14,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
-import CitiesInfo from "../assets/info1.svg";
 import useBuildingInformationStore from "../store/useBuildingInformationStore";
 import useFloorPlanStore from "../store/useFloorPlanStore";
 import useWallFabricDetailsStore from "../store/useWallFabricDetailsStore";
@@ -26,7 +24,6 @@ import useDoorFabricDetailsStore from "../store/useDoorFabricDetailsStore";
 import useSheetCalculationStore from "../store/useSheetCalculationStore";
 import useProposedSheetCalculationStore from "../store/proposed/useProposedSheetCalculationStore";
 
-// --- Fix default Leaflet icon paths ---
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -235,38 +232,30 @@ const Dashboard = () => {
 
   return (
     <div className="p-6">
-      {/* Informational Banner */}
-      <div className="flex items-center bg-blue-100 p-4 rounded mb-6">
-        <img src={CitiesInfo} alt="Cities Info" className="w-8 h-8 mr-3" />
-        <span className="text-gray-700">
-          This database is currently for <b>Islamabad</b>, <b>Peshawar</b>,
-          <b>Lahore</b>, <b>Multan</b>, <b>Karachi</b> . More cities will be
-          available in upcoming updates.
-        </span>
+      {/* Title Section */}
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          Italy Building Performance Database
+        </h1>
+        <p className="text-gray-600 text-lg">
+          Energy Efficiency Analysis and Optimization Platform
+        </p>
       </div>
 
       {/* EUI Cards Section */}
       <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6">
-        <div className="bg-green-100 shadow-md rounded-lg w-45 h-60 flex flex-col items-center justify-center">
-          <span className="text-lg">EUI</span>
-          <span className="text-xl font-bold">{Number(eui).toFixed(2)} kWh/m²</span>
-        </div>
-        <div className="bg-blue-100 shadow-md rounded-lg w-45 h-50 flex flex-col items-center justify-center">
+       
+        <div className="bg-[#E9EFF3] shadow-md rounded-lg w-45 h-50 flex flex-col items-center justify-center">
           <span className="text-lg ">Base EUI</span>
           <span className="text-xl font-bold">{Number(eui).toFixed(2)} kWh/m²</span>
         </div>
-        <div className="bg-purple-200 shadow-md rounded-lg w-45 h-60 flex flex-col items-center justify-center">
+        <div className="bg-[#E9EFF3] shadow-md rounded-lg w-45 h-60 flex flex-col items-center justify-center">
           <span className="text-lg">Proposed EUI</span>
           <span className="text-xl font-bold">
             {Number(proposed_eui).toFixed(2)} kWh/m²
           </span>
         </div>
-        <div className="bg-yellow-200 shadow-md rounded-lg w-45 h-60 flex flex-col items-center justify-center">
-          <span className="text-lg">Energy Savings</span>
-          <span className="text-xl font-bold text-green-700">
-            {Number(improvementPercentage).toFixed(2)} kWh/m²{" "}
-          </span>
-        </div>
+        
       </div>
 
       {/* Summary Section */}
@@ -380,40 +369,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Charts and Map Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Heat Loss Bar Chart */}
-        <div className="bg-white shadow-md rounded-lg p-4">
-          <Bar data={heatLossData} options={heatLossOptions} />
-        </div>
-
-        {/* Pakistan Map */}
-        <div className="bg-white shadow-md rounded-lg p-4">
-          <h2 className="text-xl font-semibold mb-4">Pakistan Climate Zones</h2>
-          <div style={{ height: "500px", width: "100%" }}>
-            <MapContainer
-              center={[30.3753, 69.3451]}
-              zoom={5}
-              scrollWheelZoom
-              style={{ height: "100%", width: "100%" }}
-            >
-              <TileLayer
-                attribution='&copy; <a href="http://osm.org/copyright">
-                OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              {cities.map((city, idx) => (
-                <Marker key={idx} position={city.position}>
-                  <Popup>
-                    <h3>{city.name}</h3>
-                    <p>{city.climate}</p>
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 };
