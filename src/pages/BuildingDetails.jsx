@@ -1,19 +1,5 @@
 import { Tabs, Tab, Box } from "@mui/material";
 import { useState } from "react";
-import House from "../assets/house.svg"; 
-import HouseBlue from "../assets/house-blue.svg"; 
-import AirVent from "../assets/air-vent.svg"; 
-import AirVentBlue from "../assets/air-vent-blue.svg"; 
-import Chart from "../assets/chart-column-big.svg"; 
-import ChartBlue from "../assets/chart-column-big-blue.svg"; 
-import Cable from "../assets/cable.svg"; 
-import CableBlue from "../assets/cable-blue.svg"; 
-import Brick from "../assets/brick.svg"; 
-import BrickBlue from "../assets/brick-blue.svg"; 
-import Door from "../assets/door.svg"; 
-import DoorBlue from "../assets/door-blue.svg"; 
-import LampBlue from "../assets/lamp-blue.svg";
-import Lamp from "../assets/lamp.svg"; 
 // base case tabs
 import BuildingInformation from "./tabs/BuildingInformation";
 import FloorPlan from "./tabs/FloorPlan";
@@ -63,44 +49,30 @@ function BuildingDetails() {
     { 
       id: 0, 
       label: "Building Information",
-      icon: House,
-      activeIcon: HouseBlue,
     },
     { 
       id: 1, 
       label: "Floor Plan",
-      icon: Brick,
-      activeIcon: BrickBlue,
     },
     { 
       id: 2, 
       label: "Fabric Details",
-      icon: Door,
-      activeIcon: DoorBlue,
     },
     { 
       id: 3, 
       label: "Lighting Load",
-      icon: Lamp,
-      activeIcon: LampBlue,
     },
     { 
       id: 4, 
       label: "Appliances Load",
-      icon: Cable,
-      activeIcon: CableBlue,
     },
     { 
       id: 5, 
       label: "Ventilation",
-      icon: AirVent,
-      activeIcon: AirVentBlue,
     },
     { 
       id: 6, 
       label: "Energy Report",
-      icon: Chart,
-      activeIcon: ChartBlue,
     }
   ];
 
@@ -109,32 +81,22 @@ function BuildingDetails() {
     { 
       id: 0, 
       label: "Fabric Details",
-      icon: Door,
-      activeIcon: DoorBlue,
     },
     { 
       id: 1, 
       label: "Lighting Load",
-      icon: Lamp,
-      activeIcon: LampBlue,
     },
     { 
       id: 2, 
       label: "Appliances Load",
-      icon: Cable,
-      activeIcon: CableBlue,
     },
     { 
       id: 3, 
       label: "Ventilation",
-      icon: AirVent,
-      activeIcon: AirVentBlue,
     },
     { 
       id: 4, 
       label: "Energy Report",
-      icon: Chart,
-      activeIcon: ChartBlue,
     }
   ];
 
@@ -223,13 +185,6 @@ function BuildingDetails() {
                 {baseSubTabs.map((tab) => (
                   <Tab
                     key={tab.id}
-                    icon={
-                      <img
-                        src={baseTabValue === tab.id ? tab.activeIcon : tab.icon}
-                        alt={`${tab.label} Icon`}
-                        className="h-6 w-6 mr-3"
-                      />
-                    }
                     label={tab.label}
                     sx={{
                       color: "black",
@@ -293,13 +248,6 @@ function BuildingDetails() {
                 {proposedSubTabs.map((tab) => (
                   <Tab
                     key={tab.id}
-                    icon={
-                      <img
-                        src={proposedTabValue === tab.id ? tab.activeIcon : tab.icon}
-                        alt={`${tab.label} Icon`}
-                        className="h-6 w-6 mr-3"
-                      />
-                    }
                     label={tab.label}
                     sx={{
                       color: "black",

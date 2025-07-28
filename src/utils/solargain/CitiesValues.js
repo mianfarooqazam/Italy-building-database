@@ -185,6 +185,7 @@ const Solar_declination = {
 // city wise latitude
 // these are convert to radians ( in excel sheet these values are in degree)
 const City_latitude = {
+    "Milan": 0.793575,    
     "Peshawar": 0.593680,    // 34.0151 degrees
     "Islamabad": 0.588145,   // 33.6995 degrees
     "Multan": 0.526815,      // 30.1864 degrees

@@ -47,6 +47,7 @@ function BuildingInformation({ onTabChange }) {
   }, [ownerName, address, plotNo, streetNo, postalCode, selectedCity]);
 
   const cities = [
+    "Milan",
     "Peshawar",
     "Lahore",
     "Islamabad",
